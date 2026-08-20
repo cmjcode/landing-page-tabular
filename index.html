@@ -3,262 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabular</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <title>Tabular — Open-Source SQL & NoSQL Client, Built in Rust</title>
+    <meta name="description" content="Tabular is a fast, native database client for MySQL, PostgreSQL, SQLite, SQL Server, MongoDB & Redis — with zero-knowledge encrypted cloud sync, team collaboration, and an AI assistant. Free & open-source, built in Rust.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+
+    <!-- Icon sprite (self-contained, no external icon CDN) -->
+    <svg style="display:none" aria-hidden="true">
+        <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 11 14 10 22 21 10 13 10 13 2"/></symbol>
+        <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></symbol>
+        <symbol id="i-diagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="6" rx="1.2"/><rect x="14" y="3" width="7" height="6" rx="1.2"/><rect x="8.5" y="15" width="7" height="6" rx="1.2"/><path d="M6.5 9v3a2 2 0 0 0 2 2h1"/><path d="M17.5 9v3a2 2 0 0 1-2 2h-1"/></symbol>
+        <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a1.8 1.8 0 0 0 1.6 2.7h17.2a1.8 1.8 0 0 0 1.6-2.7L13.7 3.9a1.8 1.8 0 0 0-3.4 0Z"/><path d="M12 9v4.5"/><circle cx="12" cy="17" r="0.9" fill="currentColor" stroke="none"/></symbol>
+        <symbol id="i-export" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></symbol>
+        <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M7.5 10.5V7a4.5 4.5 0 0 1 9 0v3.5"/><circle cx="12" cy="15.2" r="1.4" fill="currentColor" stroke="none"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.7-6.2 6-6.2s6 2.6 6 6.2"/><circle cx="17" cy="8.5" r="2.6"/><path d="M15.7 13.9c2.6.4 4.8 2.7 4.8 6.1"/></symbol>
+        <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.7-6"/><path d="M20 4v5h-5"/></symbol>
+        <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3v3M11 17v4M3 11h3M17.5 11H21M5.5 5.5l2 2M15.5 15.5l2 2M17.5 5.5l-2 2M7.5 15.5l-2 2"/><circle cx="11" cy="11" r="3.3"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></symbol>
+        <symbol id="i-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3.5 3L7 15"/><path d="M13 15h4"/></symbol>
+        <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.4-9 5.5 5.5 0 0 1 10.7-1.7A4.5 4.5 0 0 1 17 18H7Z"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></symbol>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></symbol>
+        <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m11 12 8.5-8.5M16 6l2.5 2.5M13 9l2 2"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.6-3 7.7-7 9-4-1.3-7-4.4-7-9V6l7-3Z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+        <symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M6 14h12"/></symbol>
+        <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5V12c0 1.7 3.6 3 8 3s8-1.3 8-3V5.5"/><path d="M4 12v6.5c0 1.7 3.6 3 8 3s8-1.3 8-3V12"/></symbol>
+        <symbol id="i-tablet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="2.2"/><path d="M11 18.2h2"/></symbol>
+    </svg>
+
+    <header id="siteHeader">
         <nav class="nav-container">
             <a href="index.html" class="logo">
                 <img src="foto/logo (1).png" alt="Tabular Logo">
                 <span class="logo-text">Tabular</span>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="https://github.com/tabular-id/tabular" class="nav-link" target="_blank" rel="noopener" title="GitHub">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width:24px;height:24px;vertical-align:middle;">
-                </a></li>
                 <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#database" class="nav-link">Database</a></li>
-                <li><a href="#docs" class="nav-link">Docs</a></li>
+                <li><a href="#security" class="nav-link">Cloud &amp; Security</a></li>
+                <li><a href="#database" class="nav-link">Databases</a></li>
+                <li><a href="#showcase" class="nav-link">Showcase</a></li>
                 <li><a href="#download" class="nav-link">Download</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
             </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <a href="https://github.com/tabular-id/tabular" class="github-badge" target="_blank" rel="noopener" aria-label="Star Tabular on GitHub">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" width="18" height="18">
+                    <span id="ghStarText">Star on GitHub</span>
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </nav>
     </header>
 
+    <main>
     <section class="hero">
-        <div class="particles-container" id="particles-js"></div>
-          <div class="shape"
-       style="--size: 200px; 
-              --color: rgba(100, 180, 255, 0.15); 
-              --top: 10%; 
-              --right: 15%; 
-              --blur: 40px;"></div>
-
-  <!-- Shape 2: Merah muda, kiri bawah -->
-  <div class="shape"
-       style="--size: 160px; 
-              --color: rgba(255, 100, 150, 0.1); 
-              --bottom: 15%; 
-              --left: 10%; 
-              --blur: 30px;"></div>
-
-  <!-- Shape 3: Ungu, kiri tengah -->
-  <div class="shape"
-       style="--size: 140px; 
-              --color: rgba(150, 90, 220, 0.08); 
-              --top: 50%; 
-              --left: 20%; 
-              --blur: 35px;"></div>
-
-        <div class="hero-content">
-            <h1>Open-Source SQL Client, Turbocharged</h1>
-            <p>Written in RUST. A modern, native, and user-friendly GUI tool for relational databases: MySQL, PostgreSQL, SQLite & more.</p>
-            <div class="cta-buttons">
-                <button class="cta-button primary" onclick="window.location.href='https://github.com/tabular-id/tabular/releases/latest'">Download</button>
+        <div class="glow glow-hero-a"></div>
+        <div class="glow glow-hero-b"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="eyebrow-pill">v0.12.0 &middot; Free &amp; Open Source &middot; Built in Rust 🦀</span>
+                <h1>The SQL &amp; NoSQL client that stays out of your way.</h1>
+                <p>A native, distraction-free database GUI for MySQL, PostgreSQL, SQLite, SQL Server, MongoDB &amp; Redis — with zero-knowledge encrypted cloud sync and team collaboration built in, not bolted on.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button primary" onclick="window.location.href='https://github.com/tabular-id/tabular/releases/latest'">
+                        <svg class="icon" width="18" height="18"><use href="#i-arrow-right"/></svg>
+                        Download Free
+                    </button>
+                    <button class="cta-button secondary" onclick="window.location.href='https://github.com/tabular-id/tabular'">View on GitHub</button>
+                </div>
+                <ul class="trust-bar">
+                    <li><svg class="icon" width="15" height="15"><use href="#i-check"/></svg> macOS &middot; Linux &middot; Windows</li>
+                    <li><svg class="icon" width="15" height="15"><use href="#i-check"/></svg> AGPL‑3.0 or Commercial</li>
+                    <li><svg class="icon" width="15" height="15"><use href="#i-check"/></svg> No telemetry by default</li>
+                </ul>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="foto/Picsart_25-08-13_23-12-32-328.png" alt="Tabular on MacBook" />
+            <div class="hero-image" data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-glare data-tilt-max-glare="0.1">
+                <img src="foto/photo_6102487347921797595_y.jpg" alt="Tabular database client showing a live SQL query and result grid" />
+            </div>
         </div>
     </section>
 
     <section class="features" id="features">
-       <div class="shape"
-       style="--size: 200px; 
-              --color: rgba(100, 180, 255, 0.15); 
-              --top: 10%; 
-              --right: 15%; 
-              --blur: 40px;"></div>
+        <div class="section-head">
+            <span class="section-eyebrow">Features</span>
+            <h2 class="section-title">Everything a DBA or developer actually needs</h2>
+            <p class="section-sub">No bloat, no Electron overhead — just a fast native client that covers the whole daily workflow.</p>
+        </div>
 
-  <!-- Shape 2: Merah muda, kiri bawah -->
-  <div class="shape"
-       style="--size: 160px; 
-              --color: rgba(255, 100, 150, 0.1); 
-              --bottom: 15%; 
-              --left: 10%; 
-              --blur: 30px;"></div>
+        <h3 class="group-title">Core Editor</h3>
+        <div class="bento-grid">
+            <div class="bento-card span-2">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-bolt"/></svg></div>
+                <h4>Native performance</h4>
+                <p>A single native binary built in Rust with <code>egui</code> — instant startup, low memory footprint, no Chromium/Electron runtime dragging things down.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-target"/></svg></div>
+                <h4>Clean &amp; focused</h4>
+                <p>We'd rather do the essential things well than bolt on features nobody uses.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-alert"/></svg></div>
+                <h4>Query Safety Guard</h4>
+                <p>Flags <code>UPDATE</code> / <code>DELETE</code> statements missing a <code>WHERE</code> clause before they run, so a stray query can't wipe a table by accident.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-diagram"/></svg></div>
+                <h4>Visual ER diagrams</h4>
+                <p>Pan &amp; zoom entity‑relationship view generated straight from your schema.</p>
+            </div>
+            <div class="bento-card span-2">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-export"/></svg></div>
+                <h4>Inline editing &amp; export</h4>
+                <p>Edit cells directly in the grid (with a native date/time picker), copy a cell/row/result set, or export straight to CSV &amp; XLSX. Connections can be grouped into drag‑and‑drop folders.</p>
+            </div>
+        </div>
 
-  <!-- Shape 3: Ungu, kiri tengah -->
-  <div class="shape"
-       style="--size: 140px; 
-              --color: rgba(150, 90, 220, 0.08); 
-              --top: 50%; 
-              --left: 20%; 
-              --blur: 35px;"></div>
-              
-    <h2 class="section-title">Elegant in Every Detail</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="foto/icons8-high-performance-50.png" alt="High Performance" />
-                </div>
-                <h3>High Performance</h3>
-                <p>A native app that eliminates needless complexity & extraneous details so you can be up and running fast.</p>
+        <h3 class="group-title">Cloud &amp; Teams</h3>
+        <div class="bento-grid">
+            <div class="bento-card span-2 accent-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-lock"/></svg></div>
+                <h4>Zero‑knowledge encrypted sync</h4>
+                <p>Connections, saved queries and history sync across your devices via <strong>tabular-server</strong> — encrypted client‑side with AES‑256‑GCM before they ever leave your machine. The server only ever stores ciphertext.</p>
+                <a class="card-link" href="#security">How the encryption works <svg class="icon" width="14" height="14"><use href="#i-arrow-right"/></svg></a>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="foto/icons8-business-50.png" alt="Clean & Focused" />
-                </div>
-                <h3>Clean & Focused</h3>
-                <p>We don’t want to be an app that does many things, but masters none. We only focus on the most important features.</p>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-users"/></svg></div>
+                <h4>Teams &amp; shared vault</h4>
+                <p>Share connections with a team via role‑based access — owner, editor, viewer — without ever exposing plaintext credentials to the server.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="foto/icons8-collaboration-50.png" alt="Real-time Collaboration" />
-                </div>
-                <h3>Real-time Collaboration <span style="color:#e57373;font-size:0.8em;vertical-align:super;">Coming Soon</span></h3>
-                <p>Collaboration in real-time with live cursor features, instant sync, and integrated version control. <b>Coming soon!</b></p>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-cloud"/></svg></div>
+                <h4>Sign in with Google or GitHub</h4>
+                <p>OAuth2 login with short‑lived JWT access tokens and secure refresh‑token rotation.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="foto/icons8-security-shield-50.png" alt="Security First" />
-                </div>
-                <h3>Security First</h3>
-                <p>End-to-end encryption, 2FA, and compliance with enterprise security standards to protect your data.</p>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-refresh"/></svg></div>
+                <h4>Realtime collaborative editing <span class="tag tag-beta">Beta</span></h4>
+                <p>Multiple people editing the same query with live cursors, powered by CRDTs (<code>yrs</code>, the Rust port of Yjs) over WebSockets.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="foto/icons8-keyboard-50.png" alt="Shortcut Key" />
-                </div>
-                <h3>Shortcut key available</h3>
-                <p>Every function has a shortcut key to keep your hands always on the keyboard.</p>
+        </div>
+
+        <h3 class="group-title">Power Tools</h3>
+        <div class="bento-grid cols-3">
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-sparkles"/></svg></div>
+                <h4>AI Assistant</h4>
+                <p>Schema‑aware query help right in the editor (<kbd>⌘/Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>). Bring your own key — OpenAI, Anthropic, Groq, GitHub Models, or any OpenAI‑compatible endpoint.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="foto/icons8-customer-support-50.png" alt="Quick Support" />
-                </div>
-                <h3>Quick Support</h3>
-                <p>We help you troubleshoot your problems with Tabular at lightning speed through our GitHub community.</p>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-database"/></svg></div>
+                <h4>Redis Browser</h4>
+                <p>Dedicated visual key explorer with type filters, full‑text key search, TTL/size preview, and automatic standalone/cluster detection.</p>
             </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-globe"/></svg></div>
+                <h4>Built‑in HTTP client</h4>
+                <p>A REST panel sits right next to your SQL results — Bearer/Basic/API‑key auth, JSON/form bodies, and paste‑a‑curl‑command‑to‑fill‑it‑in import.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-terminal"/></svg></div>
+                <h4>SSH tunneling</h4>
+                <p>Reach databases that only listen on localhost behind a bastion host, with tunnels managed automatically per connection.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-keyboard"/></svg></div>
+                <h4>Keyboard‑first</h4>
+                <p>A shortcut for nearly everything, so your hands never have to leave the keyboard.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-key"/></svg></div>
+                <h4>Self‑update &amp; quick support</h4>
+                <p>Checks GitHub Releases for new versions automatically; the community &amp; maintainers help troubleshoot on GitHub.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="security" id="security">
+        <div class="glow glow-security"></div>
+        <div class="section-head light-on-dark">
+            <span class="section-eyebrow">Cloud &amp; Security</span>
+            <h2 class="section-title">We designed cloud sync so we can't read your data.</h2>
+            <p class="section-sub">Tabular Server (Rust + Axum + MySQL) exists to sync your workspace across devices and teams — not to see inside it.</p>
+        </div>
+        <div class="security-flow">
+            <div class="flow-step">
+                <div class="flow-icon"><svg class="icon" width="22" height="22"><use href="#i-lock"/></svg></div>
+                <h4>1. Encrypt on your device</h4>
+                <p>Connection credentials are encrypted locally with <strong>AES‑256‑GCM</strong> before anything is sent.</p>
+            </div>
+            <svg class="icon flow-arrow" width="22" height="22"><use href="#i-arrow-right"/></svg>
+            <div class="flow-step">
+                <div class="flow-icon"><svg class="icon" width="22" height="22"><use href="#i-cloud"/></svg></div>
+                <h4>2. Only ciphertext travels</h4>
+                <p>The wire and the database both only ever see an opaque encrypted blob.</p>
+            </div>
+            <svg class="icon flow-arrow" width="22" height="22"><use href="#i-arrow-right"/></svg>
+            <div class="flow-step">
+                <div class="flow-icon"><svg class="icon" width="22" height="22"><use href="#i-shield"/></svg></div>
+                <h4>3. Zero‑knowledge storage</h4>
+                <p>Server operators cannot decrypt your credentials — even we can't read them.</p>
+            </div>
+        </div>
+        <div class="security-badges">
+            <span class="sec-badge">AES‑256‑GCM encryption</span>
+            <span class="sec-badge">OAuth2 + PKCE</span>
+            <span class="sec-badge">JWT access &amp; refresh tokens</span>
+            <span class="sec-badge">SQLx compile‑time checked queries</span>
+            <span class="sec-badge">Role‑based team access</span>
         </div>
     </section>
 
     <section class="database-section" id="database">
-        <div class="shape"
-       style="--size: 200px; 
-              --color: rgba(100, 180, 255, 0.15); 
-              --top: 10%; 
-              --right: 15%; 
-              --blur: 40px;"></div>
-
-  <!-- Shape 2: Merah muda, kiri bawah -->
-  <div class="shape"
-       style="--size: 160px; 
-              --color: rgba(255, 100, 150, 0.1); 
-              --bottom: 15%; 
-              --left: 10%; 
-              --blur: 30px;"></div>
-
-  <!-- Shape 3: Ungu, kiri tengah -->
-  <div class="shape"
-       style="--size: 140px; 
-              --color: rgba(150, 90, 220, 0.08); 
-              --top: 50%; 
-              --left: 20%; 
-              --blur: 35px;"></div>
-              
-        <h2 class="section-title">Support Multi-Database</h2>
-        <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-            Supports a whole set of relational databases and more
-        </p>
+        <div class="section-head">
+            <span class="section-eyebrow">Database Support</span>
+            <h2 class="section-title">One client, six real drivers</h2>
+            <p class="section-sub">Relational and non‑relational, all in the same familiar UI.</p>
+        </div>
         <div class="database-grid">
-            <div class="db-card" data-db="MySQL">
-                <div class="db-icon">
-                    <img src="foto/mysqldb.png" alt="MySQL">
-                </div>
-                <h4>MySQL</h4>
+            <div class="db-card" data-tilt data-tilt-max="12" data-tilt-glare data-tilt-max-glare="0.15">
+                <div class="db-icon"><img src="foto/mysqldb.png" alt="MySQL / MariaDB"></div>
+                <h4>MySQL / MariaDB</h4>
             </div>
-            <div class="db-card" data-db="PostgreSQL">
-                <div class="db-icon">
-                    <img src="foto/postgresql.png" alt="PostgreSQL">
-                </div>
+            <div class="db-card" data-tilt data-tilt-max="12" data-tilt-glare data-tilt-max-glare="0.15">
+                <div class="db-icon"><img src="foto/postgresql.png" alt="PostgreSQL"></div>
                 <h4>PostgreSQL</h4>
             </div>
-            <div class="db-card" data-db="SQLite">
-                <div class="db-icon">
-                    <img src="foto/sqlite.png" alt="SQLite">
-                </div>
+            <div class="db-card" data-tilt data-tilt-max="12" data-tilt-glare data-tilt-max-glare="0.15">
+                <div class="db-icon"><img src="foto/sqlite.png" alt="SQLite"></div>
                 <h4>SQLite</h4>
             </div>
-            <div class="db-card" data-db="Redis">
-                <div class="db-icon">
-                    <img src="foto/redis.png" alt="Redis">
-                </div>
-                <h4>Redis</h4>
-            </div>
-            <div class="db-card" data-db="microsoftsqlserver">
-                <div class="db-icon">
-                    <img src="foto/microsoftsqlserver.png" alt="SQL Server">
-                </div>
+            <div class="db-card" data-tilt data-tilt-max="12" data-tilt-glare data-tilt-max-glare="0.15">
+                <div class="db-icon"><img src="foto/microsoftsqlserver.png" alt="SQL Server"></div>
                 <h4>SQL Server</h4>
             </div>
-            <div class="db-card" data-db="MongoDB">
-                <div class="db-icon">
-                    <img src="foto/mongodb.png" alt="MongoDB">
-                </div>
-                <h4>MongoDB <span style="color:#e57373;font-size:0.8em;vertical-align:super;">Coming Soon</span></h4>
+            <div class="db-card" data-tilt data-tilt-max="12" data-tilt-glare data-tilt-max-glare="0.15">
+                <div class="db-icon"><img src="foto/mongodb.png" alt="MongoDB"></div>
+                <h4>MongoDB</h4>
+            </div>
+            <div class="db-card" data-tilt data-tilt-max="12" data-tilt-glare data-tilt-max-glare="0.15">
+                <div class="db-icon"><img src="foto/redis.png" alt="Redis"></div>
+                <h4>Redis</h4>
             </div>
         </div>
+        <p class="database-note">More drivers are on the roadmap — the query engine's dialect layer was built to make adding new databases straightforward.</p>
     </section>
 
-    <section class="screenshots-section" id="docs">
-      <div class="shape"
-       style="--size: 200px; 
-              --color: rgba(100, 180, 255, 0.658); 
-              --top: 10%; 
-              --right: 10%; 
-              --blur: 40px;"></div>
-
-  <!-- Shape 2: Merah muda, kiri bawah -->
-  <div class="shape"
-       style="--size: 160px; 
-              --color: rgba(255, 46, 112, 0.678); 
-              --bottom: 15%; 
-              --left: 92%; 
-              --blur: 30px;"></div>
-
-  <!-- Shape 3: Ungu, kiri tengah -->
-  <div class="shape"
-       style="--size: 140px; 
-              --color: rgba(118, 45, 201, 0.692); 
-              --top: 49%; 
-              --left: 2%; 
-              --blur: 35px;"></div>
-              
-        <h2 class="section-title">See Tabular in Action</h2>
+    <section class="screenshots-section" id="showcase">
+        <div class="section-head">
+            <span class="section-eyebrow">Showcase</span>
+            <h2 class="section-title">See Tabular in action</h2>
+        </div>
         <div class="screenshots-grid">
             <div class="screenshot-card">
                 <img src="foto/photo_6102487347921797595_y.jpg" alt="Effortless Data Exploration" onclick="openLightbox(this.src)">
-                <h3>Effortless Data Exploration</h3>
-                <p>This view shows the process of exploring data in a database using the SQL command SELECT * FROM customers LIMIT 100;. The interface displays a list of columns and query results in real-time, allowing users to view the structure and contents of the table in real-time.</p>
+                <h3>Effortless data exploration</h3>
+                <p>Run a query and see the result grid update in real time, with the full column list and types alongside it.</p>
             </div>
             <div class="screenshot-card">
                 <img src="foto/photo_6102487347921797597_y.jpg" alt="Manage Database Faster and Easier" onclick="openLightbox(this.src)">
-                <h3>Manage Database Faster and Easier</h3>
-                <p>The first step before accessing a database via the GUI is to create a new connection by entering connection details such as database type, host, username, and password. Once successful, the data in the table can be viewed and managed.</p>
+                <h3>Connect in seconds</h3>
+                <p>Enter host, credentials and database type once — Tabular caches the connection for instant reconnects afterwards.</p>
             </div>
             <div class="screenshot-card">
                 <img src="foto/photo_6102913494576909461_y.jpg" alt="Query Management Made Simple" onclick="openLightbox(this.src)">
-                <h3>Query Management Made Simple</h3>
-                <p>This view shows a list of SQL query files neatly organized into folders such as ADMIN, DATA, and VOLT. Each file contains ready-to-execute SQL commands for various database needs.</p>
+                <h3>Saved queries, organized</h3>
+                <p>Keep ready‑to‑run SQL files organized into folders, synced to your account across devices.</p>
             </div>
             <div class="screenshot-card">
                 <img src="foto/photo_6114138241281147881_y.jpg" alt="Quick Actions for Your Data" onclick="openLightbox(this.src)">
-                <h3>Quick Actions for Your Data</h3>
-                <p>This view shows the right-click feature on table data, which allows users to copy cells, copy rows as CSV, or directly export to a CSV/XLSX file.</p>
+                <h3>Quick actions on your data</h3>
+                <p>Right‑click a cell or row to copy it, copy as CSV, or export the result set straight to CSV/XLSX.</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="foto/halaman-utama.jpg" alt="Multi-database tree with MongoDB collections" onclick="openLightbox(this.src)">
+                <h3>One tree for every connection</h3>
+                <p>MySQL, MongoDB and Redis connections side by side in the same sidebar — no context switching between apps.</p>
             </div>
         </div>
         <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -267,80 +296,64 @@
     </section>
 
     <section id="download">
-         <div class="shape"
-       style="--size: 200px; 
-              --color: rgba(70, 159, 243, 0.514); 
-              --top: 10%; 
-              --right: 15%; 
-              --blur: 40px;"></div>
-
-  <!-- Shape 2: Merah muda, kiri bawah -->
-  <div class="shape"
-       style="--size: 160px; 
-              --color: rgba(211, 47, 5, 0.719); 
-              --bottom: 15%; 
-              --left: 10%; 
-              --blur: 30px;"></div>
-
-  <!-- Shape 3: Ungu, kiri tengah -->
-  <div class="shape"
-       style="--size: 140px; 
-              --color: rgba(70, 18, 129, 0.473); 
-              --top: 50%; 
-              --left: 20%; 
-              --blur: 35px;"></div>
-              
-        <h2>Supported Platform</h2>
+        <div class="section-head">
+            <span class="section-eyebrow">Download</span>
+            <h2 class="section-title">Get Tabular</h2>
+            <p class="section-sub">Free to use under AGPL‑3.0 — a commercial license is available for closed‑source integration.</p>
+        </div>
         <div class="platforms">
-            <div class="platform">
-                <img src="foto/icons8-windows-50.png" alt="Windows">
-                <h3>Windows</h3>
-                <button class="platform-button primary" onclick="window.location.href='https://github.com/tabular-id/tabular/releases/latest'">Download</button>
-            </div>
             <div class="platform">
                 <img src="foto/icons8-apple-inc-50.png" alt="macOS">
                 <h3>macOS</h3>
+                <p>Universal binary (Intel &amp; Apple Silicon), notarized .dmg</p>
                 <button class="platform-button primary" onclick="window.location.href='https://github.com/tabular-id/tabular/releases/latest'">Download</button>
             </div>
             <div class="platform">
                 <img src="foto/icons8-linux-50.png" alt="Linux">
                 <h3>Linux</h3>
+                <p>x86_64 &amp; aarch64 .tar.gz, plus Arch &amp; Flatpak builds</p>
                 <button class="platform-button primary" onclick="window.location.href='https://github.com/tabular-id/tabular/releases/latest'">Download</button>
+            </div>
+            <div class="platform">
+                <img src="foto/icons8-windows-50.png" alt="Windows">
+                <h3>Windows</h3>
+                <p>x86_64 &amp; aarch64 builds</p>
+                <button class="platform-button primary" onclick="window.location.href='https://github.com/tabular-id/tabular/releases/latest'">Download</button>
+            </div>
+            <div class="platform">
+                <svg class="icon platform-icon" width="42" height="42"><use href="#i-tablet"/></svg>
+                <h3>iPadOS <span class="tag tag-beta">Experimental</span></h3>
+                <p>Early groundwork exists — build from source with the iOS target, no prebuilt release yet</p>
+                <button class="platform-button secondary" onclick="window.location.href='https://github.com/tabular-id/tabular#4-installation'">Build Guide</button>
             </div>
         </div>
     </section>
+    </main>
 
-    <section class="about-tabular" id="about">
-        <div class="logo">
-            <img src="foto/logo (1).png" alt="Tabular Logo">
+    <footer class="about-tabular" id="about">
+        <div class="about-inner">
+            <div class="about-top">
+                <div class="logo">
+                    <img src="foto/logo (1).png" alt="Tabular Logo">
+                </div>
+                <div class="content">
+                    <div class="version-info">Built with ❤️ using Rust</div>
+                    <a href="https://github.com/tabular-id/tabular" class="github-link">github.com/tabular-id/tabular</a>
+                    <p class="license-note">Dual‑licensed: <strong>AGPL‑3.0</strong> for open‑source use, or a commercial license for closed‑source integration.</p>
+                </div>
+            </div>
+            <div class="about-bottom">
+                <span class="copyright">© 2026 PT. Vneu Teknologi Indonesia</span>
+                <div class="about-links">
+                    <a href="#features">Features</a>
+                    <a href="#security">Security</a>
+                    <a href="#download">Download</a>
+                    <a href="https://github.com/tabular-id/tabular/issues" target="_blank" rel="noopener">Report an issue</a>
+                </div>
+            </div>
         </div>
-        <div class="content">
-            <div class="version-info">Built with ❤️ using Rust</div>
-            <a href="https://github.com/tabular-id/tabular" class="github-link">github.com/tabular-id/tabular</a>
-            <div class="credit"><span class="copyright">© 2025 PT. Vneu Teknologi Indonesia</span></div>
-        </div>
-    </section>
+    </footer>
 
     <script src="main.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Initialize particles.js
-        particlesJS.load('particles-js', 'particles.json', function() {
-            console.log('particles.js loaded - callback');
-        });
-
-        // Lightbox functionality
-        function openLightbox(src) {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.querySelector('img').src = src;
-            lightbox.style.display = 'flex';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
-        </script>
 </body>
 </html>
-   
