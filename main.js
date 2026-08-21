@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ------------------------------------------------------------------
   const ghStarText = document.getElementById("ghStarText");
   if (ghStarText) {
-    fetch("https://api.github.com/repos/tabular-id/tabular")
+    fetch("https://api.github.com/repos/cmjcode/tabular")
       .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
       .then((data) => {
         if (typeof data.stargazers_count === "number") {

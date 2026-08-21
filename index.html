@@ -53,7 +53,7 @@
                 <li><a href="#download" class="nav-link">Download</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="https://github.com/tabular-id/tabular" class="github-badge" target="_blank" rel="noopener" aria-label="Star Tabular on GitHub">
+                <a href="https://github.com/cmjcode/tabular" class="github-badge" target="_blank" rel="noopener" aria-label="Star Tabular on GitHub">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" width="18" height="18">
                     <span id="ghStarText">Star on GitHub</span>
                 </a>
@@ -70,24 +70,30 @@
         <div class="glow glow-hero-b"></div>
         <div class="hero-inner">
             <div class="hero-content">
-                <span class="eyebrow-pill">v0.12.0 &middot; Free &amp; Open Source &middot; Built in Rust 🦀</span>
-                <h1>The SQL &amp; NoSQL client that stays out of your way.</h1>
+                <span class="eyebrow-pill"><span class="dot"></span> v0.12.0 &middot; Free &amp; Open Source &middot; Built in Rust</span>
+                <h1>The SQL &amp; NoSQL client that stays <span class="grad">out of your way.</span></h1>
                 <p>A native, distraction-free database GUI for MySQL, PostgreSQL, SQLite, SQL Server, MongoDB &amp; Redis — with zero-knowledge encrypted cloud sync and team collaboration built in, not bolted on.</p>
                 <div class="cta-buttons">
-                    <button class="cta-button primary" onclick="window.location.href='https://github.com/tabular-id/tabular/releases/latest'">
+                    <button class="cta-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases/latest'">
                         <svg class="icon" width="18" height="18"><use href="#i-arrow-right"/></svg>
                         Download Free
                     </button>
-                    <button class="cta-button secondary" onclick="window.location.href='https://github.com/tabular-id/tabular'">View on GitHub</button>
+                    <button class="cta-button secondary" onclick="window.location.href='https://github.com/cmjcode/tabular'">View on GitHub</button>
                 </div>
                 <ul class="trust-bar">
                     <li><svg class="icon" width="15" height="15"><use href="#i-check"/></svg> macOS &middot; Linux &middot; Windows</li>
                     <li><svg class="icon" width="15" height="15"><use href="#i-check"/></svg> AGPL‑3.0 or Commercial</li>
                     <li><svg class="icon" width="15" height="15"><use href="#i-check"/></svg> No telemetry by default</li>
                 </ul>
+                <div class="tech-strip">
+                    <span class="label">Built with</span>
+                    <strong>Rust</strong><strong>Axum</strong><strong>Tokio</strong><strong>SQLx</strong><strong>egui</strong>
+                </div>
             </div>
             <div class="hero-image" data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-glare data-tilt-max-glare="0.1">
                 <img src="foto/photo_6102487347921797595_y.jpg" alt="Tabular database client showing a live SQL query and result grid" />
+                <div class="floating-badge badge-security"><svg class="icon" width="15" height="15"><use href="#i-lock"/></svg> AES‑256‑GCM</div>
+                <div class="floating-badge badge-perf"><svg class="icon" width="15" height="15"><use href="#i-bolt"/></svg> Native, no Electron</div>
             </div>
         </div>
     </section>
@@ -305,26 +311,26 @@
             <div class="platform">
                 <img src="foto/icons8-apple-inc-50.png" alt="macOS">
                 <h3>macOS</h3>
-                <p>Universal binary (Intel &amp; Apple Silicon), notarized .dmg</p>
-                <button class="platform-button primary" onclick="window.location.href='https://github.com/tabular-id/tabular/releases/latest'">Download</button>
+                <p>Universal binary (Intel &amp; Apple Silicon)</p>
+                <button class="platform-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases/latest'">Download</button>
             </div>
             <div class="platform">
                 <img src="foto/icons8-linux-50.png" alt="Linux">
                 <h3>Linux</h3>
                 <p>x86_64 &amp; aarch64 .tar.gz, plus Arch &amp; Flatpak builds</p>
-                <button class="platform-button primary" onclick="window.location.href='https://github.com/tabular-id/tabular/releases/latest'">Download</button>
+                <button class="platform-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases/latest'">Download</button>
             </div>
             <div class="platform">
                 <img src="foto/icons8-windows-50.png" alt="Windows">
                 <h3>Windows</h3>
                 <p>x86_64 &amp; aarch64 builds</p>
-                <button class="platform-button primary" onclick="window.location.href='https://github.com/tabular-id/tabular/releases/latest'">Download</button>
+                <button class="platform-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases/latest'">Download</button>
             </div>
             <div class="platform">
                 <svg class="icon platform-icon" width="42" height="42"><use href="#i-tablet"/></svg>
                 <h3>iPadOS <span class="tag tag-beta">Experimental</span></h3>
                 <p>Early groundwork exists — build from source with the iOS target, no prebuilt release yet</p>
-                <button class="platform-button secondary" onclick="window.location.href='https://github.com/tabular-id/tabular#4-installation'">Build Guide</button>
+                <button class="platform-button secondary" onclick="window.location.href='https://github.com/cmjcode/tabular#4-installation'">Build Guide</button>
             </div>
         </div>
     </section>
@@ -338,9 +344,13 @@
                 </div>
                 <div class="content">
                     <div class="version-info">Built with ❤️ using Rust</div>
-                    <a href="https://github.com/tabular-id/tabular" class="github-link">github.com/tabular-id/tabular</a>
+                    <a href="https://github.com/cmjcode/tabular" class="github-link">github.com/cmjcode/tabular</a>
                     <p class="license-note">Dual‑licensed: <strong>AGPL‑3.0</strong> for open‑source use, or a commercial license for closed‑source integration.</p>
                 </div>
+                <a class="built-by" href="https://github.com/cmjcode" target="_blank" rel="noopener">
+                    <img src="foto/logocmj.svg" alt="CMJ logo" width="32" height="32">
+                    by <strong>CMJ Family</strong>
+                </a>
             </div>
             <div class="about-bottom">
                 <span class="copyright">© 2026 PT. Vneu Teknologi Indonesia</span>
@@ -348,7 +358,7 @@
                     <a href="#features">Features</a>
                     <a href="#security">Security</a>
                     <a href="#download">Download</a>
-                    <a href="https://github.com/tabular-id/tabular/issues" target="_blank" rel="noopener">Report an issue</a>
+                    <a href="https://github.com/cmjcode/tabular/issues" target="_blank" rel="noopener">Report an issue</a>
                 </div>
             </div>
         </div>
