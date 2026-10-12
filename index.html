@@ -90,7 +90,13 @@
             <div class="hero-content">
                 <span class="eyebrow-pill"><span class="dot"></span> v1.4.0 &middot; Free &amp; Open Source &middot; Built in Rust</span>
                 <h1>The database client that stays <span class="grad">out of your way.</span></h1>
-                <p>A native SQL &amp; NoSQL workbench for MySQL, PostgreSQL, SQLite, SQL Server, MongoDB &amp; Redis — with an AI assistant, ER &amp; query diagrams, API endpoints generated from your Git repo and linked to your tables, a live DBA monitor, and zero‑knowledge team sync. All in one ~0.1s‑startup binary.</p>
+                <p>A native <strong>database, API and Git client</strong> in one Rust binary — for MySQL, PostgreSQL, SQLite, SQL Server, MongoDB &amp; Redis — with an AI assistant, ER &amp; query diagrams, endpoints generated from your repo and linked to your tables, a live DBA monitor, and zero‑knowledge team sync. Starts in ~0.1s.</p>
+                <div class="hero-trio" aria-label="Three clients in one app, all reachable by AI agents over MCP">
+                    <span class="hero-trio-item"><svg class="icon" width="15" height="15"><use href="#i-database"/></svg> Database client</span>
+                    <span class="hero-trio-item"><svg class="icon" width="15" height="15"><use href="#i-globe"/></svg> API client</span>
+                    <span class="hero-trio-item"><svg class="icon" width="15" height="15"><use href="#i-git"/></svg> Git client</span>
+                    <span class="hero-trio-mcp"><svg class="icon" width="14" height="14"><use href="#i-robot"/></svg> all three MCP‑ready</span>
+                </div>
                 <div class="cta-buttons">
                     <button class="cta-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases/latest'">
                         <svg class="icon" width="18" height="18"><use href="#i-arrow-right"/></svg>
@@ -303,7 +309,106 @@
         <div class="section-head">
             <span class="section-eyebrow">Features</span>
             <h2 class="section-title">Everything a developer or DBA actually needs</h2>
-            <p class="section-sub">Four workspaces in one sidebar — <strong>DBs</strong>, <strong>APIs</strong>, <strong>Git</strong> and <strong>Team</strong> — grouped by project, with the environment you're on always one click away.</p>
+            <p class="section-sub">Three tools you'd normally install separately — a database client, an API client and a Git client — in one native Rust app, sharing one sidebar, one project model and one MCP door for your AI agents.</p>
+        </div>
+
+        <!-- The three clients, side by side, with real screenshots -->
+        <div class="trio" aria-label="Database client, API client and Git client">
+            <article class="trio-card" id="trio-db">
+                <a class="trio-shot" href="#shot-editor" aria-label="Open the database client screenshot">
+                    <span class="trio-tab"><span class="trio-tab-active">DBs</span><span>APIs</span><span>Git</span><span>Team</span></span>
+                    <img src="foto/screens/editor-results.jpg" alt="Tabular database client — connection tree, SQL editor and result grid for a MySQL database" loading="lazy">
+                </a>
+                <div class="trio-body">
+                    <span class="trio-kicker"><svg class="icon" width="16" height="16"><use href="#i-database"/></svg> Database client</span>
+                    <h4>SQL &amp; NoSQL in one grid</h4>
+                    <p>MySQL, PostgreSQL, SQLite, SQL Server, MongoDB and Redis behind one connection tree, one editor and one editable result grid — with ER diagrams, a query profiler and DBA tools a right‑click away.</p>
+                    <ul class="trio-points">
+                        <li><svg class="icon" width="14" height="14"><use href="#i-check"/></svg> Alias‑aware autocomplete, run at cursor</li>
+                        <li><svg class="icon" width="14" height="14"><use href="#i-check"/></svg> Safe grid edits, server‑side filters</li>
+                        <li><svg class="icon" width="14" height="14"><use href="#i-check"/></svg> Backup, restore, schema diff, live monitor</li>
+                    </ul>
+                    <div class="trio-mcp"><svg class="icon" width="14" height="14"><use href="#i-robot"/></svg><span><strong>Agent via MCP:</strong> describe tables, sample rows, read‑only SQL, EXPLAIN</span></div>
+                </div>
+            </article>
+
+            <article class="trio-card" id="trio-api">
+                <a class="trio-shot" href="#shot-http-client" aria-label="Open the API client screenshot">
+                    <span class="trio-tab"><span>DBs</span><span class="trio-tab-active">APIs</span><span>Git</span><span>Team</span></span>
+                    <img src="foto/screens/http-client.jpg" alt="Tabular API client — GET request with status, timing, headers and a formatted JSON response" loading="lazy">
+                </a>
+                <div class="trio-body">
+                    <span class="trio-kicker"><svg class="icon" width="16" height="16"><use href="#i-globe"/></svg> API client</span>
+                    <h4>REST &amp; GraphQL beside your SQL</h4>
+                    <p>Collections, environments and auth in the same window as your queries. Paste a curl, import Postman or Yaak, or let Tabular generate every endpoint straight from your repository.</p>
+                    <ul class="trio-points">
+                        <li><svg class="icon" width="14" height="14"><use href="#i-check"/></svg> JSON, form, multipart, GraphQL, XML bodies</li>
+                        <li><svg class="icon" width="14" height="14"><use href="#i-check"/></svg> Bearer / Basic / API‑key auth, code export</li>
+                        <li><svg class="icon" width="14" height="14"><use href="#i-check"/></svg> Endpoints drawn onto the ER diagram</li>
+                    </ul>
+                    <div class="trio-mcp"><svg class="icon" width="14" height="14"><use href="#i-robot"/></svg><span><strong>Agent via MCP:</strong> list collections, send requests, document endpoints</span></div>
+                </div>
+            </article>
+
+            <article class="trio-card" id="trio-git">
+                <a class="trio-shot" href="#shot-git-graph" aria-label="Open the Git client screenshot">
+                    <span class="trio-tab"><span>DBs</span><span>APIs</span><span class="trio-tab-active">Git</span><span>Team</span></span>
+                    <img src="foto/screens/git-graph.jpg" alt="Tabular Git client — commit graph with branch lines, tags, dates, authors and short hashes" loading="lazy">
+                </a>
+                <div class="trio-body">
+                    <span class="trio-kicker"><svg class="icon" width="16" height="16"><use href="#i-git"/></svg> Git client</span>
+                    <h4>The repos behind your data</h4>
+                    <p>Status, commit graph, branches and tags for the repositories your APIs and diagrams point at — plus AI‑assisted review of GitHub pull requests and GitLab merge requests, without leaving the app.</p>
+                    <ul class="trio-points">
+                        <li><svg class="icon" width="14" height="14"><use href="#i-check"/></svg> Commit graph with branches &amp; tags</li>
+                        <li><svg class="icon" width="14" height="14"><use href="#i-check"/></svg> One repo shared by project, diagram &amp; APIs</li>
+                        <li><svg class="icon" width="14" height="14"><use href="#i-check"/></svg> PR / MR review with your AI model</li>
+                    </ul>
+                    <div class="trio-mcp"><svg class="icon" width="14" height="14"><use href="#i-robot"/></svg><span><strong>Agent via MCP:</strong> read status &amp; history, map code to tables and endpoints</span></div>
+                </div>
+            </article>
+        </div>
+
+        <!-- How the three share one core and one MCP door -->
+        <div class="trio-spine" aria-label="One Rust core, one MCP server, any AI agent">
+            <div class="spine-col spine-core">
+                <span class="ai-flow-label">One native binary</span>
+                <div class="spine-chips">
+                    <span class="spine-chip"><svg class="icon" width="14" height="14"><use href="#i-database"/></svg> DBs</span>
+                    <span class="spine-chip"><svg class="icon" width="14" height="14"><use href="#i-globe"/></svg> APIs</span>
+                    <span class="spine-chip"><svg class="icon" width="14" height="14"><use href="#i-git"/></svg> Git</span>
+                </div>
+                <small>Rust · egui · Tokio · ~0.1s start · 30–70 MB RAM</small>
+            </div>
+            <div class="ai-flow-link">
+                <svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true">
+                    <path class="wire" d="M0 30 C 40 30, 80 30, 120 30"/>
+                    <path class="wire-dash" d="M0 30 C 40 30, 80 30, 120 30"/>
+                </svg>
+                <span class="ai-flow-tag">same project · same creds</span>
+            </div>
+            <div class="spine-col spine-mcp">
+                <span class="ai-flow-label">One MCP server</span>
+                <code class="ai-cta-cmd">tabular mcp</code>
+                <small>29 tools · read‑only by default · writes need your click · every call logged</small>
+            </div>
+            <div class="ai-flow-link">
+                <svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true">
+                    <path class="wire" d="M0 30 C 40 30, 80 30, 120 30"/>
+                    <path class="wire-dash" d="M0 30 C 40 30, 80 30, 120 30"/>
+                </svg>
+                <span class="ai-flow-tag"><strong>no</strong> passwords</span>
+            </div>
+            <div class="spine-col spine-agents">
+                <span class="ai-flow-label">Any AI agent</span>
+                <div class="spine-chips">
+                    <span class="spine-chip"><svg class="icon" width="14" height="14"><use href="#i-terminal"/></svg> Claude Code</span>
+                    <span class="spine-chip"><svg class="icon" width="14" height="14"><use href="#i-keyboard"/></svg> Cursor</span>
+                    <span class="spine-chip"><svg class="icon" width="14" height="14"><use href="#i-robot"/></svg> Codex</span>
+                    <span class="spine-chip muted"><svg class="icon" width="14" height="14"><use href="#i-puzzle"/></svg> any MCP client</span>
+                </div>
+                <small>Plus the in‑app assistant with your own key or a local model</small>
+            </div>
         </div>
 
         <h3 class="group-title">Editor &amp; data grid</h3>
@@ -392,7 +497,8 @@
             <div class="bento-card">
                 <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-git"/></svg></div>
                 <h4>Git client &amp; merge review</h4>
-                <p>Status, commits and branches for the repositories behind your APIs and diagrams, plus AI‑assisted review of GitHub pull requests and GitLab merge requests.</p>
+                <p>Status, commit graph and branches for the repositories behind your APIs and diagrams, plus AI‑assisted review of GitHub pull requests and GitLab merge requests.</p>
+                <a class="card-link" href="#shot-git-graph">See it in the showcase <svg class="icon" width="14" height="14"><use href="#i-arrow-right"/></svg></a>
             </div>
             <div class="bento-card span-2">
                 <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-folder"/></svg></div>
@@ -580,10 +686,15 @@
                 <h3>Charts from results</h3>
                 <p>Bar, line, area or scatter straight from the result pane. Pick the X column, one or more Y columns and an aggregate.</p>
             </div>
-            <div class="screenshot-card">
+            <div class="screenshot-card" id="shot-http-client">
                 <img src="foto/screens/http-client.jpg" alt="HTTP client tab with a GET request and a formatted JSON response" onclick="openLightbox(this.src)">
                 <h3>HTTP client beside your SQL</h3>
                 <p>Send requests, inspect status, timing and headers, search the body, and generate code — in the same window as your queries.</p>
+            </div>
+            <div class="screenshot-card" id="shot-git-graph">
+                <img src="foto/screens/git-graph.jpg" alt="Git client commit graph with colored branch lines, a v0.14.1 tag, commit messages, dates, authors and short hashes" onclick="openLightbox(this.src)">
+                <h3>Git client: commit graph</h3>
+                <p>Branches, tags, authors and hashes for the repository behind your APIs and diagrams — the same repo your endpoints were generated from.</p>
             </div>
             <div class="screenshot-card">
                 <img src="foto/screens/dba-monitor.jpg" alt="Live DBA process monitor dashboard with queries per second, connections, buffer cache hit and slowest statements" onclick="openLightbox(this.src)">
@@ -595,7 +706,7 @@
                 <h3>Everything on a right‑click</h3>
                 <p>Diagrams, process monitor, users &amp; privileges, schema diff, backup, restore, copy, transfer, export as SQL and compare data.</p>
             </div>
-            <div class="screenshot-card">
+            <div class="screenshot-card" id="shot-editor">
                 <img src="foto/screens/editor-results.jpg" alt="SQL editor with the connection tree and a result grid" onclick="openLightbox(this.src)">
                 <h3>Editor &amp; grid</h3>
                 <p>Syntax highlighting, statement‑at‑cursor execution, column pinning, server‑side pagination and inline editing.</p>
