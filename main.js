@@ -137,6 +137,9 @@ document.addEventListener("DOMContentLoaded", function () {
     revealOnScroll(".section-head", { stagger: 0 });
     revealOnScroll(".group-title", { stagger: 0.05 });
     revealOnScroll(".bento-card", { stagger: 0.06 });
+    revealOnScroll(".ai-flow", { stagger: 0 });
+    revealOnScroll(".ai-pillar", { stagger: 0.1 });
+    revealOnScroll(".ai-compare-wrap, .ai-cta", { stagger: 0.08 });
     revealOnScroll(".flow-step", { stagger: 0.12 });
     revealOnScroll(".sec-badge", { stagger: 0.04 });
     revealOnScroll(".db-card", { stagger: 0.06 });

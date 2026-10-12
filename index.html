@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabular — Open-Source SQL & NoSQL Client, Built in Rust</title>
-    <meta name="description" content="Tabular is a fast, native database client for MySQL, PostgreSQL, SQLite, SQL Server, MongoDB & Redis — with zero-knowledge encrypted cloud sync, team collaboration, and an AI assistant. Free & open-source, built in Rust.">
+    <title>Tabular — Open-Source SQL & NoSQL Client with AI, Diagrams & DBA Tools, Built in Rust</title>
+    <meta name="description" content="Tabular is a fast, native database client for MySQL, PostgreSQL, SQLite, SQL Server, MongoDB & Redis — with an AI assistant, MCP server for coding agents, ER & query diagrams, a visual query profiler, DBA process monitor, backup/restore, HTTP client, Git client and zero-knowledge encrypted team sync. Free & open-source, built in Rust.">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
@@ -37,6 +37,21 @@
         <symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M6 14h12"/></symbol>
         <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5V12c0 1.7 3.6 3 8 3s8-1.3 8-3V5.5"/><path d="M4 12v6.5c0 1.7 3.6 3 8 3s8-1.3 8-3V12"/></symbol>
         <symbol id="i-tablet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="2.2"/><path d="M11 18.2h2"/></symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><rect x="5.5" y="11" width="3.2" height="7" rx="0.8"/><rect x="10.4" y="6" width="3.2" height="12" rx="0.8"/><rect x="15.3" y="9" width="3.2" height="9" rx="0.8"/></symbol>
+        <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M7.4 11.2 16.6 6.8M7.4 12.8l9.2 4.4"/></symbol>
+        <symbol id="i-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16a8 8 0 1 1 16 0"/><path d="m12 16 4-5"/><circle cx="12" cy="16" r="1.4" fill="currentColor" stroke="none"/><path d="M3 20h18"/></symbol>
+        <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m6.5 12 3-3 2.5 2.5 3.5-4"/></symbol>
+        <symbol id="i-archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1.5"/><path d="M5 9v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9"/><path d="M10 13h4"/></symbol>
+        <symbol id="i-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13"/><path d="m14 5 3 3-3 3"/><path d="M20 16H7"/><path d="m10 13-3 3 3 3"/></symbol>
+        <symbol id="i-puzzle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5a2 2 0 0 1 4 0V5h3a1.5 1.5 0 0 1 1.5 1.5v3h1.5a2 2 0 0 1 0 4H18.5v3A1.5 1.5 0 0 1 17 18h-3v1.5a2 2 0 0 1-4 0V18H7a1.5 1.5 0 0 1-1.5-1.5v-3H4a2 2 0 0 1 0-4h1.5v-3A1.5 1.5 0 0 1 7 5h3V3.5Z"/></symbol>
+        <symbol id="i-robot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="2.5"/><path d="M12 4v4M9 4h6"/><circle cx="9" cy="13" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1.2" fill="currentColor" stroke="none"/><path d="M9.5 16.5h5"/></symbol>
+        <symbol id="i-git" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="5" r="2.2"/><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="9" r="2.2"/><path d="M6 7.2v9.6"/><path d="M18 11.2c0 3-3 4-6 4.4-2 .3-4 .8-5 2"/></symbol>
+        <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A1.5 1.5 0 0 1 4.5 6h4l2 2h9A1.5 1.5 0 0 1 21 9.5v8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-10Z"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8"/></symbol>
+        <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6.2 7.2V19l-3.6-1.8v-5L4 5Z"/></symbol>
+        <symbol id="i-user-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.5" cy="8" r="3.4"/><path d="M3 20c0-3.6 2.9-6.3 6.5-6.3 1 0 1.9.2 2.7.6"/><circle cx="17.5" cy="16.5" r="2.4"/><path d="M17.5 12.6v1.5M17.5 18.9v1.5M21.4 16.5h-1.5M15.1 16.5h-1.5"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+        <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></symbol>
     </svg>
 
     <header id="siteHeader">
@@ -46,7 +61,10 @@
                 <span class="logo-text">Tabular</span>
             </a>
             <ul class="nav-menu" id="navMenu">
+                <li><a href="#why-ai" class="nav-link">Why Tabular</a></li>
                 <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#ai" class="nav-link">AI &amp; Agents</a></li>
+                <li><a href="#dba" class="nav-link">DBA Tools</a></li>
                 <li><a href="#security" class="nav-link">Cloud &amp; Security</a></li>
                 <li><a href="#database" class="nav-link">Databases</a></li>
                 <li><a href="#showcase" class="nav-link">Showcase</a></li>
@@ -70,9 +88,9 @@
         <div class="glow glow-hero-b"></div>
         <div class="hero-inner">
             <div class="hero-content">
-                <span class="eyebrow-pill"><span class="dot"></span> v0.12.0 &middot; Free &amp; Open Source &middot; Built in Rust</span>
-                <h1>The SQL &amp; NoSQL client that stays <span class="grad">out of your way.</span></h1>
-                <p>A native, distraction-free database GUI for MySQL, PostgreSQL, SQLite, SQL Server, MongoDB &amp; Redis — with zero-knowledge encrypted cloud sync and team collaboration built in, not bolted on.</p>
+                <span class="eyebrow-pill"><span class="dot"></span> v1.4.0 &middot; Free &amp; Open Source &middot; Built in Rust</span>
+                <h1>The database client that stays <span class="grad">out of your way.</span></h1>
+                <p>A native SQL &amp; NoSQL workbench for MySQL, PostgreSQL, SQLite, SQL Server, MongoDB &amp; Redis — with an AI assistant, ER &amp; query diagrams, API endpoints generated from your Git repo and linked to your tables, a live DBA monitor, and zero‑knowledge team sync. All in one ~0.1s‑startup binary.</p>
                 <div class="cta-buttons">
                     <button class="cta-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases/latest'">
                         <svg class="icon" width="18" height="18"><use href="#i-arrow-right"/></svg>
@@ -82,114 +100,369 @@
                 </div>
                 <ul class="trust-bar">
                     <li><svg class="icon" width="15" height="15"><use href="#i-check"/></svg> macOS &middot; Linux &middot; Windows</li>
+                    <li><svg class="icon" width="15" height="15"><use href="#i-check"/></svg> ~30–70 MB RAM, no Electron</li>
                     <li><svg class="icon" width="15" height="15"><use href="#i-check"/></svg> AGPL‑3.0 or Commercial</li>
-                    <li><svg class="icon" width="15" height="15"><use href="#i-check"/></svg> No telemetry by default</li>
                 </ul>
                 <div class="tech-strip">
                     <span class="label">Built with</span>
-                    <strong>Rust</strong><strong>Axum</strong><strong>Tokio</strong><strong>SQLx</strong><strong>egui</strong>
+                    <strong>Rust</strong><strong>egui</strong><strong>Tokio</strong><strong>SQLx</strong><strong>wasmi</strong>
                 </div>
             </div>
             <div class="hero-image" data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-glare data-tilt-max-glare="0.1">
-                <img src="foto/photo_6102487347921797595_y.jpg" alt="Tabular database client showing a live SQL query and result grid" />
-                <div class="floating-badge badge-security"><svg class="icon" width="15" height="15"><use href="#i-lock"/></svg> AES‑256‑GCM</div>
+                <img src="foto/screens/api-diagram-links.jpg" alt="Tabular v1.4 — ER diagram of 18 tables with 46 API endpoints generated from the Git repository drawn as lines to the tables they touch" />
+                <div class="hero-ai-panel">
+                    <img src="foto/screens/ai-assistant-panel.jpg" alt="AI Assistant panel explaining the active query step by step" />
+                    <span class="hero-ai-panel-label"><svg class="icon" width="13" height="13"><use href="#i-sparkles"/></svg> AI Assistant</span>
+                </div>
+                <div class="floating-badge badge-mcp"><svg class="icon" width="15" height="15"><use href="#i-robot"/></svg> MCP for Claude Code &amp; Cursor</div>
                 <div class="floating-badge badge-perf"><svg class="icon" width="15" height="15"><use href="#i-bolt"/></svg> Native, no Electron</div>
             </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         WHY TABULAR IN THE AI ERA — visual explainer, placed right after
+         the hero so the advantages are seen before the feature list.
+         ================================================================ -->
+    <section class="why-ai" id="why-ai">
+        <div class="glow glow-why"></div>
+        <div class="section-head">
+            <span class="section-eyebrow">Why Tabular in the AI era</span>
+            <h2 class="section-title">Coding agents are writing your SQL now. <br>Give them a <span class="grad">safe door</span> to the database.</h2>
+            <p class="section-sub">Claude Code, Cursor and Codex can already read your code. Tabular lets them see the <em>real</em> schema and run queries — without a password, without unreviewed writes, and with every call on record.</p>
+        </div>
+
+        <!-- 1. The flow: agent → Tabular (gate) → databases -->
+        <div class="ai-flow" aria-label="How coding agents reach your databases through Tabular">
+            <div class="ai-flow-col ai-flow-agents">
+                <span class="ai-flow-label">Your AI agents</span>
+                <div class="ai-node"><svg class="icon" width="18" height="18"><use href="#i-terminal"/></svg> Claude Code</div>
+                <div class="ai-node"><svg class="icon" width="18" height="18"><use href="#i-keyboard"/></svg> Cursor</div>
+                <div class="ai-node"><svg class="icon" width="18" height="18"><use href="#i-robot"/></svg> Codex / Gemini CLI</div>
+                <div class="ai-node muted"><svg class="icon" width="18" height="18"><use href="#i-puzzle"/></svg> Any MCP client</div>
+            </div>
+
+            <div class="ai-flow-link">
+                <svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true">
+                    <path class="wire" d="M0 30 C 40 30, 80 30, 120 30"/>
+                    <path class="wire-dash" d="M0 30 C 40 30, 80 30, 120 30"/>
+                </svg>
+                <span class="ai-flow-tag">MCP · <strong>no passwords</strong></span>
+            </div>
+
+            <div class="ai-flow-col ai-flow-core">
+                <div class="ai-core">
+                    <div class="ai-core-head">
+                        <img src="foto/logo (1).png" alt="" width="22" height="22">
+                        <strong>Tabular</strong>
+                        <span class="ai-core-pill"><code>tabular mcp</code></span>
+                    </div>
+                    <ul class="ai-core-rules">
+                        <li>
+                            <span class="rule-ic ok"><svg class="icon" width="14" height="14"><use href="#i-check"/></svg></span>
+                            <div><strong>Schema &amp; read-only queries</strong><small>describe tables, sample rows, EXPLAIN — instant</small></div>
+                        </li>
+                        <li>
+                            <span class="rule-ic warn"><svg class="icon" width="14" height="14"><use href="#i-shield"/></svg></span>
+                            <div><strong>Writes wait for your click</strong><small>UPDATE / DELETE / DDL are queued for approval</small></div>
+                        </li>
+                        <li>
+                            <span class="rule-ic info"><svg class="icon" width="14" height="14"><use href="#i-archive"/></svg></span>
+                            <div><strong>Every call is logged</strong><small>who asked, which connection, statement digest</small></div>
+                        </li>
+                        <li>
+                            <span class="rule-ic lock"><svg class="icon" width="14" height="14"><use href="#i-lock"/></svg></span>
+                            <div><strong>Credentials never leave here</strong><small>OS keychain · SSH bastions · mTLS</small></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ai-flow-link">
+                <svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true">
+                    <path class="wire" d="M0 30 C 40 30, 80 30, 120 30"/>
+                    <path class="wire-dash" d="M0 30 C 40 30, 80 30, 120 30"/>
+                </svg>
+                <span class="ai-flow-tag"><strong>your</strong> credentials</span>
+            </div>
+
+            <div class="ai-flow-col ai-flow-dbs">
+                <span class="ai-flow-label">Your databases</span>
+                <div class="ai-db-grid">
+                    <img src="foto/postgresql.png" alt="PostgreSQL" title="PostgreSQL">
+                    <img src="foto/mysqldb.png" alt="MySQL / MariaDB" title="MySQL / MariaDB">
+                    <img src="foto/sqlite.png" alt="SQLite" title="SQLite">
+                    <img src="foto/microsoftsqlserver.png" alt="SQL Server" title="SQL Server">
+                    <img src="foto/mongodb.png" alt="MongoDB" title="MongoDB">
+                    <img src="foto/redis.png" alt="Redis" title="Redis">
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Three things you get, each with a tiny visual -->
+        <div class="ai-pillars">
+            <article class="ai-pillar">
+                <div class="ai-pillar-visual">
+                    <div class="access-bar" aria-label="Access level per connection">
+                        <span class="active">Read only</span><span>Ask</span><span>Edit</span><span>Agent</span>
+                    </div>
+                    <div class="approval-card">
+                        <div class="approval-head"><svg class="icon" width="14" height="14"><use href="#i-robot"/></svg> Claude Code wants to run</div>
+                        <code class="approval-sql">UPDATE orders SET status='paid' WHERE id=4812</code>
+                        <div class="approval-actions"><span class="btn-ok">Approve</span><span class="btn-no">Deny</span></div>
+                    </div>
+                </div>
+                <h4>You stay in control</h4>
+                <p>Every connection has an access level. Read-only by default; risky statements pop up in Tabular and run only after you approve them.</p>
+            </article>
+
+            <article class="ai-pillar">
+                <div class="ai-pillar-visual">
+                    <div class="context-stack">
+                        <div class="ctx ctx-1"><svg class="icon" width="14" height="14"><use href="#i-database"/></svg> Live schema, FKs &amp; DDL</div>
+                        <div class="ctx ctx-2"><svg class="icon" width="14" height="14"><use href="#i-diagram"/></svg> ER diagram &amp; domain groups</div>
+                        <div class="ctx ctx-3"><svg class="icon" width="14" height="14"><use href="#i-gauge"/></svg> EXPLAIN plans &amp; running queries</div>
+                        <div class="ctx ctx-4"><svg class="icon" width="14" height="14"><use href="#i-folder"/></svg> Project memory &amp; notes</div>
+                    </div>
+                </div>
+                <h4>Agents get real context, not guesses</h4>
+                <p>Instead of pasting a schema dump into a chat, the agent asks Tabular: 29 MCP tools cover tables, sample rows, EXPLAIN, diagrams, query history and per-project memory.</p>
+            </article>
+
+            <article class="ai-pillar">
+                <div class="ai-pillar-visual">
+                    <div class="model-cloud">
+                        <span>Claude</span><span>GPT</span><span>Gemini</span><span>Groq</span><span>OpenRouter</span><span class="local">Ollama</span><span class="local">llama.cpp</span><span class="local">MLX</span>
+                    </div>
+                    <div class="model-note"><svg class="icon" width="14" height="14"><use href="#i-key"/></svg> Bring your own key — or run fully local</div>
+                </div>
+                <h4>Your model, your rules, your machine</h4>
+                <p>The in-app assistant works with the provider you already pay for, or with a local model so nothing leaves your laptop. No Tabular account, no telemetry.</p>
+            </article>
+        </div>
+
+        <!-- 3. Honest comparison -->
+        <div class="ai-compare-wrap">
+            <table class="ai-compare">
+                <thead>
+                    <tr>
+                        <th scope="col">When an agent needs your database…</th>
+                        <th scope="col">Paste schema into chat</th>
+                        <th scope="col">Raw DB connection for the agent</th>
+                        <th scope="col" class="is-tabular">Tabular MCP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Agent sees the real, current schema</th>
+                        <td><span class="cmp no"><svg class="icon" width="14" height="14"><use href="#i-x"/></svg></span> stale copy</td>
+                        <td><span class="cmp ok"><svg class="icon" width="14" height="14"><use href="#i-check"/></svg></span></td>
+                        <td class="is-tabular"><span class="cmp ok"><svg class="icon" width="14" height="14"><use href="#i-check"/></svg></span> plus diagrams &amp; FKs</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Password stays out of the agent</th>
+                        <td><span class="cmp ok"><svg class="icon" width="14" height="14"><use href="#i-check"/></svg></span></td>
+                        <td><span class="cmp no"><svg class="icon" width="14" height="14"><use href="#i-x"/></svg></span> in <code>.env</code> / prompt</td>
+                        <td class="is-tabular"><span class="cmp ok"><svg class="icon" width="14" height="14"><use href="#i-check"/></svg></span> OS keychain</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Writes need a human</th>
+                        <td><span class="cmp mid"><svg class="icon" width="14" height="14"><use href="#i-minus"/></svg></span> you copy-paste</td>
+                        <td><span class="cmp no"><svg class="icon" width="14" height="14"><use href="#i-x"/></svg></span> runs blind</td>
+                        <td class="is-tabular"><span class="cmp ok"><svg class="icon" width="14" height="14"><use href="#i-check"/></svg></span> approve in-app</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Audit trail of agent queries</th>
+                        <td><span class="cmp no"><svg class="icon" width="14" height="14"><use href="#i-x"/></svg></span></td>
+                        <td><span class="cmp no"><svg class="icon" width="14" height="14"><use href="#i-x"/></svg></span></td>
+                        <td class="is-tabular"><span class="cmp ok"><svg class="icon" width="14" height="14"><use href="#i-check"/></svg></span> every call</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">EXPLAIN &amp; profiling for the agent</th>
+                        <td><span class="cmp no"><svg class="icon" width="14" height="14"><use href="#i-x"/></svg></span></td>
+                        <td><span class="cmp mid"><svg class="icon" width="14" height="14"><use href="#i-minus"/></svg></span> raw text</td>
+                        <td class="is-tabular"><span class="cmp ok"><svg class="icon" width="14" height="14"><use href="#i-check"/></svg></span> plan + bottlenecks</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Works through SSH bastion / mTLS</th>
+                        <td><span class="cmp mid"><svg class="icon" width="14" height="14"><use href="#i-minus"/></svg></span></td>
+                        <td><span class="cmp no"><svg class="icon" width="14" height="14"><use href="#i-x"/></svg></span> agent must tunnel</td>
+                        <td class="is-tabular"><span class="cmp ok"><svg class="icon" width="14" height="14"><use href="#i-check"/></svg></span> handled per connection</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="ai-cta">
+            <code class="ai-cta-cmd">claude mcp add tabular -- tabular mcp</code>
+            <a class="card-link" href="#ai">See all AI &amp; agent features <svg class="icon" width="14" height="14"><use href="#i-arrow-right"/></svg></a>
         </div>
     </section>
 
     <section class="features" id="features">
         <div class="section-head">
             <span class="section-eyebrow">Features</span>
-            <h2 class="section-title">Everything a DBA or developer actually needs</h2>
-            <p class="section-sub">No bloat, no Electron overhead — just a fast native client that covers the whole daily workflow.</p>
+            <h2 class="section-title">Everything a developer or DBA actually needs</h2>
+            <p class="section-sub">Four workspaces in one sidebar — <strong>DBs</strong>, <strong>APIs</strong>, <strong>Git</strong> and <strong>Team</strong> — grouped by project, with the environment you're on always one click away.</p>
         </div>
 
-        <h3 class="group-title">Core Editor</h3>
+        <h3 class="group-title">Editor &amp; data grid</h3>
         <div class="bento-grid">
             <div class="bento-card span-2">
                 <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-bolt"/></svg></div>
                 <h4>Native performance</h4>
-                <p>A single native binary built in Rust with <code>egui</code> — instant startup, low memory footprint, no Chromium/Electron runtime dragging things down.</p>
+                <p>A single Rust binary built on <code>egui</code> — instant startup, a 30–70 MB memory footprint, fully async query execution on Tokio. No Chromium runtime dragging things down.</p>
             </div>
             <div class="bento-card">
-                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-target"/></svg></div>
-                <h4>Clean &amp; focused</h4>
-                <p>We'd rather do the essential things well than bolt on features nobody uses.</p>
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-keyboard"/></svg></div>
+                <h4>Modern SQL editor</h4>
+                <p>Alias‑aware autocomplete, FK join suggestions, run‑statement‑at‑cursor (<kbd>⌘</kbd>+<kbd>Enter</kbd>), format, toggle comment, move/duplicate lines, go‑to‑line, find &amp; replace with regex.</p>
             </div>
             <div class="bento-card">
                 <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-alert"/></svg></div>
-                <h4>Query Safety Guard</h4>
-                <p>Flags <code>UPDATE</code> / <code>DELETE</code> statements missing a <code>WHERE</code> clause before they run, so a stray query can't wipe a table by accident.</p>
+                <h4>Safe by default</h4>
+                <p>Grid saves run in one transaction and must hit exactly one row; <code>UPDATE</code>/<code>DELETE</code> without <code>WHERE</code> is flagged before it runs.</p>
             </div>
             <div class="bento-card">
-                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-diagram"/></svg></div>
-                <h4>Visual ER diagrams</h4>
-                <p>Pan &amp; zoom entity‑relationship view generated straight from your schema.</p>
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-filter"/></svg></div>
+                <h4>Filter builder &amp; FK navigation</h4>
+                <p>Build server‑side <code>WHERE</code> clauses from dropdowns, pin or freeze columns, and click a foreign‑key cell to jump to the parent row.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-chart"/></svg></div>
+                <h4>Charts from any result</h4>
+                <p>Switch the result pane to bar, line, area or scatter, pick X/Y columns and an aggregate — no export needed.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-search"/></svg></div>
+                <h4>Cell inspector</h4>
+                <p>JSON tree, hex/binary view, image preview (PNG, JPEG, WebP, SVG) and virtual‑scrolling text for large cells.</p>
             </div>
             <div class="bento-card span-2">
                 <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-export"/></svg></div>
-                <h4>Inline editing &amp; export</h4>
-                <p>Edit cells directly in the grid (with a native date/time picker), copy a cell/row/result set, or export straight to CSV &amp; XLSX. Connections can be grouped into drag‑and‑drop folders.</p>
+                <h4>Import, export &amp; transfer</h4>
+                <p>Open CSV, JSON, NDJSON or Excel files as queryable tables, import into any table, copy tables between connections, compare data, export as SQL/CSV/XLSX, or copy results as Markdown, JSON or <code>INSERT</code> statements.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-target"/></svg></div>
+                <h4>Quick Open &amp; command palette</h4>
+                <p><kbd>⌘</kbd>+<kbd>P</kbd> fuzzy‑searches tables, views, saved queries, history, connections and commands in one box.</p>
             </div>
         </div>
 
-        <h3 class="group-title">Cloud &amp; Teams</h3>
+        <h3 class="group-title">Diagrams &amp; understanding</h3>
+        <div class="bento-grid cols-3">
+            <div class="bento-card accent-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-diagram"/></svg></div>
+                <h4>ER diagrams with groups &amp; notes</h4>
+                <p>Pan‑and‑zoom entity‑relationship canvas generated from your schema. Group tables into domains, draw relations, add notes, and link a group to its git repository — the AI then suggests which tables belong to that code and shows the API endpoints that use them.</p>
+                <a class="card-link" href="#showcase">See it in the showcase <svg class="icon" width="14" height="14"><use href="#i-arrow-right"/></svg></a>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-flow"/></svg></div>
+                <h4>Query diagram</h4>
+                <p>Right‑click any statement to see it as an animated data‑flow: sources → WHERE → GROUP BY → ORDER BY → result, with a step‑by‑step explanation and an "Analyze AI" button.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-gauge"/></svg></div>
+                <h4>Visual query profiler</h4>
+                <p><code>EXPLAIN ANALYZE</code> rendered as a hierarchical node graph for PostgreSQL, MySQL and SQL Server — cost percentages, slow nodes in red, warnings for seq scans, cartesian products and disk spills.</p>
+            </div>
+        </div>
+
+        <h3 class="group-title">APIs, Git &amp; projects</h3>
         <div class="bento-grid">
             <div class="bento-card span-2 accent-card">
-                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-lock"/></svg></div>
-                <h4>Zero‑knowledge encrypted sync</h4>
-                <p>Connections, saved queries and history sync across your devices via <strong>tabular-server</strong> — encrypted client‑side with AES‑256‑GCM before they ever leave your machine. The server only ever stores ciphertext.</p>
-                <a class="card-link" href="#security">How the encryption works <svg class="icon" width="14" height="14"><use href="#i-arrow-right"/></svg></a>
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-git"/></svg></div>
+                <h4>Generate API endpoints from your Git repo <span class="tag tag-new">New</span></h4>
+                <p>Point an API folder at a repository and Tabular reads the code to create every endpoint as a ready‑to‑send request. Routes are detected without AI for Express, Fastify, NestJS, Next.js, FastAPI, Flask, Django, Laravel, Rails, Gin, Axum, Spring, ASP.NET and more; your AI agent then finds the ones the scanner missed and documents each one — params, headers, auth, body and response examples, status codes and the tables it reads or writes.</p>
+                <a class="card-link" href="#shot-api-from-git">See it in the showcase <svg class="icon" width="14" height="14"><use href="#i-arrow-right"/></svg></a>
             </div>
-            <div class="bento-card">
-                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-users"/></svg></div>
-                <h4>Teams &amp; shared vault</h4>
-                <p>Share connections with a team via role‑based access — owner, editor, viewer — without ever exposing plaintext credentials to the server.</p>
-            </div>
-            <div class="bento-card">
-                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-cloud"/></svg></div>
-                <h4>Sign in with Google or GitHub</h4>
-                <p>OAuth2 login with short‑lived JWT access tokens and secure refresh‑token rotation.</p>
-            </div>
-            <div class="bento-card">
-                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-refresh"/></svg></div>
-                <h4>Realtime collaborative editing <span class="tag tag-beta">Beta</span></h4>
-                <p>Multiple people editing the same query with live cursors, powered by CRDTs (<code>yrs</code>, the Rust port of Yjs) over WebSockets.</p>
-            </div>
-        </div>
-
-        <h3 class="group-title">Power Tools</h3>
-        <div class="bento-grid cols-3">
-            <div class="bento-card">
-                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-sparkles"/></svg></div>
-                <h4>AI Assistant</h4>
-                <p>Schema‑aware query help right in the editor (<kbd>⌘/Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>). Bring your own key — OpenAI, Anthropic, Groq, GitHub Models, or any OpenAI‑compatible endpoint.</p>
-            </div>
-            <div class="bento-card">
-                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-database"/></svg></div>
-                <h4>Redis Browser</h4>
-                <p>Dedicated visual key explorer with type filters, full‑text key search, TTL/size preview, and automatic standalone/cluster detection.</p>
+            <div class="bento-card span-2 accent-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-flow"/></svg></div>
+                <h4>APIs linked to tables in the diagram <span class="tag tag-new">New</span></h4>
+                <p>An API folder and a diagram group that share a repository are linked automatically. Every generated endpoint is drawn on the ER canvas with lines to the tables it touches, so you can see which routes write to <code>orders</code> before you change it — and jump from a table to its endpoints or from an endpoint to the diagram group in one click.</p>
+                <a class="card-link" href="#shot-api-diagram-links">See it in the showcase <svg class="icon" width="14" height="14"><use href="#i-arrow-right"/></svg></a>
             </div>
             <div class="bento-card">
                 <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-globe"/></svg></div>
                 <h4>Built‑in HTTP client</h4>
-                <p>A REST panel sits right next to your SQL results — Bearer/Basic/API‑key auth, JSON/form bodies, and paste‑a‑curl‑command‑to‑fill‑it‑in import.</p>
+                <p>REST collections next to your SQL tabs — JSON, form, multipart, GraphQL, XML bodies; Bearer/Basic/API‑key auth; paste a curl command to import; export code; Postman &amp; Yaak import.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-git"/></svg></div>
+                <h4>Git client &amp; merge review</h4>
+                <p>Status, commits and branches for the repositories behind your APIs and diagrams, plus AI‑assisted review of GitHub pull requests and GitLab merge requests.</p>
+            </div>
+            <div class="bento-card span-2">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-folder"/></svg></div>
+                <h4>Projects &amp; environments</h4>
+                <p>A project bundles connections, saved queries and an HTTP collection, with <code>.env</code>‑style Development / Staging / Production variables and an AI memory per project. Projects, diagram groups and API folders can all share one repository.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="ai-section" id="ai">
+        <div class="section-head">
+            <span class="section-eyebrow">AI &amp; Agents</span>
+            <h2 class="section-title">Your schema, your model, your rules</h2>
+            <p class="section-sub">Tabular talks to the AI you already pay for — and lets your coding agents talk to your databases without ever seeing a password.</p>
+        </div>
+        <div class="bento-grid">
+            <div class="bento-card span-2 accent-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-sparkles"/></svg></div>
+                <h4>AI Assistant <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd></h4>
+                <p>Schema‑aware chat docked beside the editor: explain, optimize or review a query, or let the agent write SQL straight into a tab with live edit and one‑click revert. Bring your own key — OpenAI, Anthropic Claude, Google Gemini, xAI, Groq, OpenRouter, GitHub Models, or local Ollama / llama.cpp / MLX — or run CLI agents such as Claude Code, Gemini CLI and Antigravity side by side.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-robot"/></svg></div>
+                <h4>MCP server for coding agents</h4>
+                <p><code>tabular mcp</code> lets Claude Code, Cursor, Codex and any MCP client list connections, describe schemas, run read‑only queries and get EXPLAIN plans. Credentials never leave Tabular; writes need your approval; every agent query is audited.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-puzzle"/></svg></div>
+                <h4>WebAssembly plugins</h4>
+                <p>Sandboxed <code>wasmi</code> runtime with host APIs. Starter plugins export Parquet &amp; DuckDB and generate ORM models for Diesel, SeaORM, Prisma, TypeORM and SQLAlchemy.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="dba-section" id="dba">
+        <div class="section-head">
+            <span class="section-eyebrow">DBA Tools</span>
+            <h2 class="section-title">Operate the database, not just query it</h2>
+            <p class="section-sub">Right‑click a database in the tree and everything a DBA reaches for is already there.</p>
+        </div>
+        <div class="bento-grid cols-3">
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-monitor"/></svg></div>
+                <h4>Live process monitor</h4>
+                <p>Real‑time processlist, deadlock &amp; lock tree, a metrics dashboard (queries/s, connections, buffer cache hit) and the slowest statements — with one‑click cancel or kill.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-archive"/></svg></div>
+                <h4>Backup &amp; restore wizard</h4>
+                <p>Native <code>pg_dump</code>, <code>mysqldump</code>, SQLite, MongoDB and SQL Server backups with streaming logs and <code>.sql.gz</code> / <code>.tar</code> / <code>.dump</code> output. Restore from the same dialog.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-swap"/></svg></div>
+                <h4>Schema diff &amp; migrations</h4>
+                <p>Compare two schemas structurally and generate forward <code>ALTER TABLE</code> scripts and their rollback. Copy, rename or transfer whole databases between servers.</p>
+            </div>
+            <div class="bento-card">
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-user-cog"/></svg></div>
+                <h4>Users &amp; privileges GUI</h4>
+                <p>Create accounts, change passwords and manage grant matrices per database and table without memorising <code>GRANT</code> syntax.</p>
             </div>
             <div class="bento-card">
                 <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-terminal"/></svg></div>
-                <h4>SSH tunneling</h4>
-                <p>Reach databases that only listen on localhost behind a bastion host, with tunnels managed automatically per connection.</p>
+                <h4>SSH, bastions &amp; mTLS</h4>
+                <p>Multi‑hop SSH jump hosts, passphrase‑protected keys, custom CA and client certificates — managed automatically per connection.</p>
             </div>
             <div class="bento-card">
-                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-keyboard"/></svg></div>
-                <h4>Keyboard‑first</h4>
-                <p>A shortcut for nearly everything, so your hands never have to leave the keyboard.</p>
-            </div>
-            <div class="bento-card">
-                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-key"/></svg></div>
-                <h4>Self‑update &amp; quick support</h4>
-                <p>Checks GitHub Releases for new versions automatically; the community &amp; maintainers help troubleshoot on GitHub.</p>
+                <div class="feature-icon"><svg class="icon" width="26" height="26"><use href="#i-database"/></svg></div>
+                <h4>Redis &amp; MongoDB browsers</h4>
+                <p>Visual key explorer with type filters, TTL and memory size for Redis (standalone or cluster); collections, documents and compression for MongoDB.</p>
             </div>
         </div>
     </section>
@@ -199,13 +472,13 @@
         <div class="section-head light-on-dark">
             <span class="section-eyebrow">Cloud &amp; Security</span>
             <h2 class="section-title">We designed cloud sync so we can't read your data.</h2>
-            <p class="section-sub">Tabular Server (Rust + Axum + MySQL) exists to sync your workspace across devices and teams — not to see inside it.</p>
+            <p class="section-sub">Tabular Server (Rust + Axum + MySQL) syncs connections, queries, HTTP collections and diagrams across your devices and teams — without ever seeing inside them.</p>
         </div>
         <div class="security-flow">
             <div class="flow-step">
                 <div class="flow-icon"><svg class="icon" width="22" height="22"><use href="#i-lock"/></svg></div>
                 <h4>1. Encrypt on your device</h4>
-                <p>Connection credentials are encrypted locally with <strong>AES‑256‑GCM</strong> before anything is sent.</p>
+                <p>Secrets are encrypted locally with <strong>AES‑256‑GCM</strong> under a key derived with <strong>Argon2id</strong> before anything is sent.</p>
             </div>
             <svg class="icon flow-arrow" width="22" height="22"><use href="#i-arrow-right"/></svg>
             <div class="flow-step">
@@ -215,25 +488,26 @@
             </div>
             <svg class="icon flow-arrow" width="22" height="22"><use href="#i-arrow-right"/></svg>
             <div class="flow-step">
-                <div class="flow-icon"><svg class="icon" width="22" height="22"><use href="#i-shield"/></svg></div>
-                <h4>3. Zero‑knowledge storage</h4>
-                <p>Server operators cannot decrypt your credentials — even we can't read them.</p>
+                <div class="flow-icon"><svg class="icon" width="22" height="22"><use href="#i-users"/></svg></div>
+                <h4>3. Share with X25519 sealed boxes</h4>
+                <p>Team vaults re‑wrap keys for each member with public‑key crypto — owner, editor and viewer roles, no plaintext on the server.</p>
             </div>
         </div>
         <div class="security-badges">
-            <span class="sec-badge">AES‑256‑GCM encryption</span>
-            <span class="sec-badge">OAuth2 + PKCE</span>
-            <span class="sec-badge">JWT access &amp; refresh tokens</span>
-            <span class="sec-badge">SQLx compile‑time checked queries</span>
-            <span class="sec-badge">Role‑based team access</span>
+            <span class="sec-badge">AES‑256‑GCM + Argon2id</span>
+            <span class="sec-badge">X25519 team vaults</span>
+            <span class="sec-badge">OAuth2 (Google, GitHub) + JWT rotation</span>
+            <span class="sec-badge">OS keychain for credentials</span>
+            <span class="sec-badge">Realtime collab via CRDTs</span>
+            <span class="sec-badge">No telemetry by default</span>
         </div>
     </section>
 
     <section class="database-section" id="database">
         <div class="section-head">
             <span class="section-eyebrow">Database Support</span>
-            <h2 class="section-title">One client, six real drivers</h2>
-            <p class="section-sub">Relational and non‑relational, all in the same familiar UI.</p>
+            <h2 class="section-title">One client, six built‑in drivers — and a plugin API for more</h2>
+            <p class="section-sub">Relational, document and key‑value, all in the same tree. HTTP APIs sit right beside them.</p>
         </div>
         <div class="database-grid">
             <div class="db-card" data-tilt data-tilt-max="12" data-tilt-glare data-tilt-max-glare="0.15">
@@ -261,39 +535,70 @@
                 <h4>Redis</h4>
             </div>
         </div>
-        <p class="database-note">More drivers are on the roadmap — the query engine's dialect layer was built to make adding new databases straightforward.</p>
+        <p class="database-note">Need another engine? Driver plugins (WebAssembly) can add new databases without touching the core — see the plugin SDK in the repository.</p>
     </section>
 
     <section class="screenshots-section" id="showcase">
         <div class="section-head">
             <span class="section-eyebrow">Showcase</span>
-            <h2 class="section-title">See Tabular in action</h2>
+            <h2 class="section-title">See Tabular 1.4 in action</h2>
+            <p class="section-sub">Fresh screenshots from the current release. Click any image to enlarge.</p>
         </div>
         <div class="screenshots-grid">
-            <div class="screenshot-card">
-                <img src="foto/photo_6102487347921797595_y.jpg" alt="Effortless Data Exploration" onclick="openLightbox(this.src)">
-                <h3>Effortless data exploration</h3>
-                <p>Run a query and see the result grid update in real time, with the full column list and types alongside it.</p>
+            <div class="screenshot-card wide">
+                <img src="foto/screens/er-diagram.jpg" alt="ER diagram with table groups 'User' and 'Team', foreign-key relations and column types" onclick="openLightbox(this.src)">
+                <h3>ER diagrams, grouped by domain</h3>
+                <p>Generated from the live schema. Group tables into colored domains, follow FK edges, add notes, and export — all on a pan‑and‑zoom canvas.</p>
+            </div>
+            <div class="screenshot-card" id="shot-api-from-git">
+                <img src="foto/screens/api-from-git.jpg" alt="APIs sidebar with a tabular-server folder linked to its Git repository, endpoint folders such as auth, collab and connections generated from the code, a request opened with its URL and query parameters pre-filled, and a 'Generate endpoints' background process running" onclick="openLightbox(this.src)">
+                <h3>API endpoints generated from Git</h3>
+                <p>Link a folder to a repository and the endpoints appear as named, ready‑to‑send requests — URL, params and body pre‑filled — while the generator keeps working in the background.</p>
+            </div>
+            <div class="screenshot-card" id="shot-api-table-links">
+                <img src="foto/screens/api-table-links.jpg" alt="Diagram popup listing the three HTTP API endpoints that read or write the http_requests table, each with its source file and line number" onclick="openLightbox(this.src)">
+                <h3>Every table knows its APIs</h3>
+                <p>Click the badge on a table to list the endpoints that read or write it, each with the source file and line — then open the request or focus it on the canvas.</p>
+            </div>
+            <div class="screenshot-card" id="shot-api-diagram-links">
+                <img src="foto/screens/api-diagram-links.jpg" alt="ER diagram of the tabular database with an API panel listing 46 endpoints grouped by table and colored lines connecting an endpoint card to the tables it touches" onclick="openLightbox(this.src)">
+                <h3>APIs drawn on the diagram</h3>
+                <p>46 endpoints across 18 tables on one canvas: browse them by table or as a CRUD matrix, and follow the lines from an endpoint to everything it touches.</p>
             </div>
             <div class="screenshot-card">
-                <img src="foto/photo_6102487347921797597_y.jpg" alt="Manage Database Faster and Easier" onclick="openLightbox(this.src)">
-                <h3>Connect in seconds</h3>
-                <p>Enter host, credentials and database type once — Tabular caches the connection for instant reconnects afterwards.</p>
+                <img src="foto/screens/ai-assistant.jpg" alt="AI Assistant panel explaining a query step by step next to the result grid" onclick="openLightbox(this.src)">
+                <h3>AI Assistant in the editor</h3>
+                <p>Ask it to explain, optimize or review the active query. Here a CLI agent explains an <code>information_schema</code> query step by step.</p>
             </div>
             <div class="screenshot-card">
-                <img src="foto/photo_6102913494576909461_y.jpg" alt="Query Management Made Simple" onclick="openLightbox(this.src)">
-                <h3>Saved queries, organized</h3>
-                <p>Keep ready‑to‑run SQL files organized into folders, synced to your account across devices.</p>
+                <img src="foto/screens/query-diagram.jpg" alt="Query diagram showing source table, WHERE, ORDER BY and result set as a data-flow graph" onclick="openLightbox(this.src)">
+                <h3>Query diagram</h3>
+                <p>One right‑click turns a statement into an animated data‑flow — sources, filters, sort and the final result set.</p>
             </div>
             <div class="screenshot-card">
-                <img src="foto/photo_6114138241281147881_y.jpg" alt="Quick Actions for Your Data" onclick="openLightbox(this.src)">
-                <h3>Quick actions on your data</h3>
-                <p>Right‑click a cell or row to copy it, copy as CSV, or export the result set straight to CSV/XLSX.</p>
+                <img src="foto/screens/chart.jpg" alt="Bar chart built from a query result with X and Y column pickers" onclick="openLightbox(this.src)">
+                <h3>Charts from results</h3>
+                <p>Bar, line, area or scatter straight from the result pane. Pick the X column, one or more Y columns and an aggregate.</p>
             </div>
             <div class="screenshot-card">
-                <img src="foto/halaman-utama.jpg" alt="Multi-database tree with MongoDB collections" onclick="openLightbox(this.src)">
-                <h3>One tree for every connection</h3>
-                <p>MySQL, MongoDB and Redis connections side by side in the same sidebar — no context switching between apps.</p>
+                <img src="foto/screens/http-client.jpg" alt="HTTP client tab with a GET request and a formatted JSON response" onclick="openLightbox(this.src)">
+                <h3>HTTP client beside your SQL</h3>
+                <p>Send requests, inspect status, timing and headers, search the body, and generate code — in the same window as your queries.</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="foto/screens/dba-monitor.jpg" alt="Live DBA process monitor dashboard with queries per second, connections, buffer cache hit and slowest statements" onclick="openLightbox(this.src)">
+                <h3>Live DBA monitor</h3>
+                <p>Processlist, lock tree and a metrics dashboard with the slowest statements from <code>performance_schema</code>.</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="foto/screens/db-tools-menu.jpg" alt="Database context menu with Diagrams, Live DBA Process Monitor, Manage Users, Schema Diff, Backup, Restore, Transfer and Compare" onclick="openLightbox(this.src)">
+                <h3>Everything on a right‑click</h3>
+                <p>Diagrams, process monitor, users &amp; privileges, schema diff, backup, restore, copy, transfer, export as SQL and compare data.</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="foto/screens/editor-results.jpg" alt="SQL editor with the connection tree and a result grid" onclick="openLightbox(this.src)">
+                <h3>Editor &amp; grid</h3>
+                <p>Syntax highlighting, statement‑at‑cursor execution, column pinning, server‑side pagination and inline editing.</p>
             </div>
         </div>
         <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -304,32 +609,32 @@
     <section id="download">
         <div class="section-head">
             <span class="section-eyebrow">Download</span>
-            <h2 class="section-title">Get Tabular</h2>
-            <p class="section-sub">Free to use under AGPL‑3.0 — a commercial license is available for closed‑source integration.</p>
+            <h2 class="section-title">Get Tabular 1.4</h2>
+            <p class="section-sub">Free to use under AGPL‑3.0 — a commercial license is available for closed‑source integration. The app checks GitHub Releases and updates itself.</p>
         </div>
         <div class="platforms">
             <div class="platform">
                 <img src="foto/icons8-apple-inc-50.png" alt="macOS">
                 <h3>macOS</h3>
-                <p>Universal binary (Intel &amp; Apple Silicon)</p>
+                <p>Notarized <code>.dmg</code> or <code>.pkg</code> (Intel &amp; Apple Silicon)</p>
                 <button class="platform-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases/latest'">Download</button>
             </div>
             <div class="platform">
                 <img src="foto/icons8-linux-50.png" alt="Linux">
                 <h3>Linux</h3>
-                <p>x86_64 &amp; aarch64 .tar.gz, plus Arch &amp; Flatpak builds</p>
-                <button class="platform-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases/latest'">Download</button>
+                <p><code>.deb</code>, <code>.tar.gz</code>, Flatpak and Arch (AUR) builds</p>
+                <button class="platform-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases'">Download</button>
             </div>
             <div class="platform">
                 <img src="foto/icons8-windows-50.png" alt="Windows">
                 <h3>Windows</h3>
-                <p>x86_64 &amp; aarch64 builds</p>
-                <button class="platform-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases/latest'">Download</button>
+                <p>Installer and portable <code>.zip</code> (x86_64)</p>
+                <button class="platform-button primary" onclick="window.location.href='https://github.com/cmjcode/tabular/releases'">Download</button>
             </div>
             <div class="platform">
                 <svg class="icon platform-icon" width="42" height="42"><use href="#i-tablet"/></svg>
-                <h3>iPadOS <span class="tag tag-beta">Experimental</span></h3>
-                <p>Early groundwork exists — build from source with the iOS target, no prebuilt release yet</p>
+                <h3>iPadOS &amp; Android <span class="tag tag-beta">Experimental</span></h3>
+                <p>Touch‑ready UI and build scripts exist for both — build from source, no store release yet</p>
                 <button class="platform-button secondary" onclick="window.location.href='https://github.com/cmjcode/tabular#4-installation'">Build Guide</button>
             </div>
         </div>
@@ -343,7 +648,7 @@
                     <img src="foto/logo (1).png" alt="Tabular Logo">
                 </div>
                 <div class="content">
-                    <div class="version-info">Built with ❤️ using Rust</div>
+                    <div class="version-info">Tabular 1.4.0 — built with Rust</div>
                     <a href="https://github.com/cmjcode/tabular" class="github-link">github.com/cmjcode/tabular</a>
                     <p class="license-note">Dual‑licensed: <strong>AGPL‑3.0</strong> for open‑source use, or a commercial license for closed‑source integration.</p>
                 </div>
@@ -355,7 +660,10 @@
             <div class="about-bottom">
                 <span class="copyright">© 2026 PT. Vneu Teknologi Indonesia</span>
                 <div class="about-links">
+                    <a href="#why-ai">Why Tabular</a>
                     <a href="#features">Features</a>
+                    <a href="#ai">AI &amp; Agents</a>
+                    <a href="#dba">DBA Tools</a>
                     <a href="#security">Security</a>
                     <a href="#download">Download</a>
                     <a href="https://github.com/cmjcode/tabular/issues" target="_blank" rel="noopener">Report an issue</a>
